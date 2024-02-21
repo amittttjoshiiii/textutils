@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link} from 'react-router-dom';
+ import { Link} from 'react-router-dom';
 
 
 export default function Navbar(props) {
@@ -14,11 +14,11 @@ export default function Navbar(props) {
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a className={`nav-a active text-${props.txtclr}`} aria-current="page" href="/">Home</a>
+              <Link className={`nav-a active text-${props.txtclr} mx-3`} aria-current="page" to="/">Home</Link>
             </li>
 
             <li className="nav-item">
-              <a className={`nav-a disabled text-${props.txtclr}`} aria-disabled="true" href='/about'>About me</a>
+              <Link className={`nav-a disabled text-${props.txtclr}`} aria-disabled="true" to='/about'>About me</Link>
             </li>
           </ul>
           <form className="d-flex" role="search">
@@ -26,15 +26,15 @@ export default function Navbar(props) {
             <button className="btn btn-outline-success" type="submit">Search</button>
           </form>
           <div className="form-check form-switch mx-3" >
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleMode} />
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.toggleMode('')}} />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark mode</label>
           </div>
           <div className="form-check form-switch mx-3" >
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleModeRed} />
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.toggleMode('danger')}} />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Red Mode</label>
           </div>
           <div className="form-check form-switch mx-3" >
-            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={props.toggleModeGreen} />
+            <input className="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault" onClick={()=>{props.toggleMode('success')}} />
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Green Mode</label>
           </div>
         </div>

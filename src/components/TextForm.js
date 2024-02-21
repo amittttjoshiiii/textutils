@@ -13,7 +13,7 @@ export default function TextForm(props) {
 
  return (
   <>
-  <div className="container">
+  <div className="container ">
   <div>
    <div className="mb-3" style={{color: props.mode==='dark'?'white':'#042743'}}>
     <label htmlFor="exampleFormControlTextarea1" className="form-label" >{props.text}</label>
@@ -23,7 +23,7 @@ export default function TextForm(props) {
   </div>
   <div className="scotainer" style={{color: props.mode==='dark'?'white':'#042743'}}>
    <h1>your Text Summary</h1>
-   <p>{text.split(" ").length} words {text.length} character</p>
+   <p>{text.split(/\s+/).filter((element)=>{return element.length!==0}).length} words {text.length} character</p>
   </div>
   </div>
   </>
